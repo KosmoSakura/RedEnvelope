@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">RedEnvelope</string>
+    <string name="app_name">(→_→)</string>
+    <string name="description">说明：
+        \n点击下面这个按钮，可以帮你抢红包。
+        \n程序运行状态参考下面那个彩色的字。
+        \n抢红包原理是基于Android的辅助通道模拟点击完成
+        \n源码我上传到了Gayhub:"https://github.com/KosmoSakura/RedEnvelope"
+        \n本应用仅用于娱乐，请勿商业。</string>
+    <string name="title">Kosmos的红包插件</string>
 </resources>
