@@ -22,33 +22,32 @@ public class MainActivity extends AppCompatActivity {
 
         tStatus = findViewById(R.id.main_status);
         tBtn = findViewById(R.id.main_btn);
-//        TextView tAbout = findViewById(R.id.main_txt);
-//        tAbout.setText(Html.fromHtml(getString(R.string.description)));
-//        tAbout.setMovementMethod(LinkMovementMethod.getInstance());
         refresh();
-        //        if (!UPermissions.isAssistOn()) {
-//            UDialog.getInstance(this, true, true)
-//                .showNoticeWithOnebtn(getString(R.string.u_need_set_assist),
-//                    (result, dia) -> {
-//                        UIntent.goAssist();
-//                        dia.dismiss();
-//                    });
-//            return;
-//        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!isAssistOn()) {
+            Code.status.set(false);
+        }
     }
 
     public void mainClick(View view) {
         if (Code.status.get()) {
             Code.status.set(false);
         } else {
-            if (isAssistOn()) {
+            if (!isAssistOn()) {
                 UDialog.getInstance(this, false, false)
-                    .showNoticeWithTwobtn("", (result, dia) -> {
+                    .showNoticeWithTwobtn("启动程序之前需要先授予辅助通道权限", (result, dia) -> {
                         UIntent.goAssist();
                         dia.dismiss();
                     });
+                return;
             }
+            Code.status.set(true);
         }
+        refresh();
     }
 
     /**
