@@ -1,0 +1,35 @@
+# 忽略文件
+local.properties
+.externalNativeBuild
+google-services.json
+freeline_project_description.json
+freeline.py
+
+# 忽略后缀
+*.apk
+*.ap_
+*.dex
+*.class
+*.classpath
+*.project
+*.log
+*.iml
+*.jks
+
+# 忽略文件夹
+.gradle/
+.settings/
+.navigation/
+.idea/
+release/
+bin/
+gen/
+out/
+debug/
+release/
+build/
+proguard/
+captures/
+freeline/
+proguard/
+sampledata/
